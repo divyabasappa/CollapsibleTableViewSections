@@ -19,7 +19,7 @@ class HeaderView: UITableViewHeaderFooterView {
             }
             
             titleLabel?.text = item.sectionTitle
-            setCollapsed(collapsed: item.isCollapsed ?? false)
+            setCollapsed(collapsed: item.isCollapsed)
         }
     }
     

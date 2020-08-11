@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     func setupTableView() {
         tableView?.estimatedRowHeight = 100
         tableView?.rowHeight = UITableView.automaticDimension
-        tableView?.sectionHeaderHeight = 70
         tableView?.estimatedSectionHeaderHeight = 70
         tableView?.separatorStyle = .none
         
@@ -53,6 +52,10 @@ extension ViewController: UITableViewDelegate {
             return headerView
         }
         return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableView.automaticDimension
     }
 }
 

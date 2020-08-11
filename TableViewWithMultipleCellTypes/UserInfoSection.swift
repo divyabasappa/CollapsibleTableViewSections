@@ -22,7 +22,7 @@ class UserInfoSection: TableViewSectionProtocol {
     var isCollapsed = true
     
     var sectionTitle: String? {
-        return "UserInfo"
+        return "UserInfo: I like travelling along Missisipi! Mississippi is a southern U.S. state with the Mississippi River to its west, the state of Alabama to its east, and the Gulf of Mexico to the south."
     }
 
     var items: [TableViewCellModelProtocol] {

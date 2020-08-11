@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -15,14 +13,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="70"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0If-TA-p4K">
-                    <rect key="frame" x="16" y="23.5" width="50.5" height="24"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0If-TA-p4K">
+                    <rect key="frame" x="16" y="15" width="320" height="40"/>
                     <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="▽" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bkk-uX-H2B">
-                    <rect key="frame" x="341" y="25" width="18" height="21"/>
+                    <rect key="frame" x="346" y="24.5" width="13" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="2c5-9H-FcL"/>
+                        <constraint firstAttribute="width" constant="13" id="Lel-YS-RYa"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -30,8 +32,10 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="0If-TA-p4K" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="RQR-Yb-0JW"/>
+                <constraint firstAttribute="bottom" secondItem="0If-TA-p4K" secondAttribute="bottom" constant="15" id="0NG-El-EDh"/>
+                <constraint firstItem="Bkk-uX-H2B" firstAttribute="leading" secondItem="0If-TA-p4K" secondAttribute="trailing" constant="10" id="Eab-n0-RPm"/>
                 <constraint firstItem="0If-TA-p4K" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="VYN-MJ-Ox8"/>
+                <constraint firstItem="0If-TA-p4K" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="15" id="jgj-ou-b2k"/>
                 <constraint firstItem="Bkk-uX-H2B" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="n5g-bf-i2w"/>
                 <constraint firstAttribute="trailing" secondItem="Bkk-uX-H2B" secondAttribute="trailing" constant="16" id="oF9-cA-KKz"/>
             </constraints>
@@ -40,6 +44,7 @@
                 <outlet property="arrowLabel" destination="Bkk-uX-H2B" id="zOA-5e-1vW"/>
                 <outlet property="titleLabel" destination="0If-TA-p4K" id="gsJ-y0-ChR"/>
             </connections>
+            <point key="canvasLocation" x="140" y="144"/>
         </view>
     </objects>
 </document>

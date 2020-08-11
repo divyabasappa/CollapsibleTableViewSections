@@ -15,7 +15,7 @@ class EmailSection: TableViewSectionProtocol {
     }
     
     var sectionTitle: String? {
-        "EmailSection"
+        "EmailSection Gmail is a free email service developed by Google. Users can access Gmail on the web and using third-party programs that synchronize email content through POP or IMAP protocols."
     }
      
     var type: ProfileViewModelItemType {
