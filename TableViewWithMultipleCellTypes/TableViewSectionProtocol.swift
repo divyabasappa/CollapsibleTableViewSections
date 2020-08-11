@@ -18,7 +18,7 @@ protocol TableViewSectionProtocol {
 
 extension TableViewSectionProtocol {
     var rowCount: Int {
-        return 1
+        return items.count
     }
     
     var isCollapsible: Bool {

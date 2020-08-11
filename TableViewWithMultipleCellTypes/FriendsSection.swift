@@ -23,10 +23,6 @@ class FriendsSection: TableViewSectionProtocol {
         return .friend
     }
     
-    var rowCount: Int {
-        return items.count
-    }
-    
     var profile: Profile?
     
     var items: [TableViewCellModelProtocol] {

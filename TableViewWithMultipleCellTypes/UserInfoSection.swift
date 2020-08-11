@@ -24,10 +24,7 @@ class UserInfoSection: TableViewSectionProtocol {
     var sectionTitle: String? {
         return "UserInfo"
     }
-    
-    var rowCount: Int {
-        return items.count
-    }
+
     var items: [TableViewCellModelProtocol] {
         guard let name = profile?.fullName,
             let pictureUrl = profile?.pictureUrl,

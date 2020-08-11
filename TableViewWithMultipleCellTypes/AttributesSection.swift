@@ -22,10 +22,6 @@ class AttributesSection: TableViewSectionProtocol {
         return .attribute
     }
     
-    var rowCount: Int {
-        return items.count
-    }
-    
     var profile: Profile?
     
     var items: [TableViewCellModelProtocol] {
