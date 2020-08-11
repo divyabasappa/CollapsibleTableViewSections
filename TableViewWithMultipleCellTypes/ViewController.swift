@@ -30,6 +30,7 @@ class ViewController: UIViewController {
         tableView?.estimatedRowHeight = 100
         tableView?.rowHeight = UITableView.automaticDimension
         tableView?.sectionHeaderHeight = 70
+        tableView?.estimatedSectionHeaderHeight = 70
         tableView?.separatorStyle = .none
         
         tableView?.register(AboutCell.nib, forCellReuseIdentifier: AboutCell.identifier)
