@@ -8,6 +8,7 @@ import Foundation
 import UIKit
 
 class EmailCellModel: TableViewCellModelProtocol {
+
     var delegate: TableViewCellDelegate?
     
     var reuseIdentifier: String {
@@ -26,5 +27,7 @@ class EmailCellModel: TableViewCellModelProtocol {
         return cell
     }
     
-    
+    func registerCell(in tableView: UITableView) {
+        tableView.register(EmailCell.nib, forCellReuseIdentifier: reuseIdentifier)
+    }
 }

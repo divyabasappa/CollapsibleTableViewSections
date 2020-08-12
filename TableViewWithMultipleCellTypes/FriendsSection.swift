@@ -6,6 +6,7 @@
 
 
 import Foundation
+import UIKit
 
 class FriendsSection: TableViewSectionProtocol {
     var delegate: TableViewCellDelegate?
@@ -37,5 +38,11 @@ class FriendsSection: TableViewSectionProtocol {
     init(profile: Profile, delegate: TableViewCellDelegate?) {
         self.profile = profile
         self.delegate = delegate
+    }
+    
+    func registerCellInSection(tableView: UITableView) {
+        items.forEach { (cell) in
+            cell.registerCell(in: tableView)
+        }
     }
 }

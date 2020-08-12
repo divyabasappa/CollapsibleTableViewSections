@@ -6,6 +6,7 @@
 
 
 import Foundation
+import UIKit
 
 class UserInfoSection: TableViewSectionProtocol {
     var delegate: TableViewCellDelegate?
@@ -29,6 +30,12 @@ class UserInfoSection: TableViewSectionProtocol {
         }
         let nameAndPictureItem = ProfileViewModelNamePictureItem(name: name, pictureUrl: pictureUrl)
         return [NamePictureModel(item: nameAndPictureItem), NamePictureModel(item: nameAndPictureItem), NamePictureModel(item: nameAndPictureItem)]
+    }
+    
+    func registerCellInSection(tableView: UITableView) {
+        items.forEach { (cellModel) in
+            cellModel.registerCell(in: tableView)
+        }
     }
     
     init(profile: Profile, delegate: TableViewCellDelegate?) {

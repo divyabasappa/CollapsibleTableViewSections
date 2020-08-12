@@ -6,6 +6,7 @@
 
 
 import Foundation
+import UIKit
 
 protocol TableViewSectionProtocol {
     var items: [GenericTableViewCellProtocol] { get }
@@ -14,6 +15,7 @@ protocol TableViewSectionProtocol {
     var isCollapsible: Bool { get }
     var rowCount: Int { get }
     var delegate: TableViewCellDelegate? { get set }
+    func registerCellInSection(tableView: UITableView)
 }
 
 extension TableViewSectionProtocol {

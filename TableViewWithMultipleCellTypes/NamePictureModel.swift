@@ -26,4 +26,7 @@ class NamePictureModel: TableViewCellModelProtocol {
         return cell
     }
     
+    func registerCell(in tableView: UITableView) {
+        tableView.register(NamePictureCell.nib, forCellReuseIdentifier: reuseIdentifier)
+    }
 }

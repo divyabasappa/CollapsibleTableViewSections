@@ -5,6 +5,7 @@
 //  Created by Divya Basappa on 8/11/20.
 
 import Foundation
+import UIKit
 
 class AboutSectionLoggedOutState: TableViewSectionProtocol {
     var delegate: TableViewCellDelegate?
@@ -25,6 +26,12 @@ class AboutSectionLoggedOutState: TableViewSectionProtocol {
     
     init(delegate: TableViewCellDelegate?) {
         self.delegate = delegate
+    }
+    
+    func registerCellInSection(tableView: UITableView) {
+        items.forEach { (cell) in
+            cell.registerCell(in: tableView)
+        }
     }
 
 }

@@ -27,9 +27,9 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         isLoading = false
-        setupTableView()
         viewModel.delegate = self
         viewModel.setUpDataSource()
+        setupTableView()
         viewModel.reloadSections = { [weak self] (section: Int) in
             self?.tableView?.beginUpdates()
             self?.tableView?.reloadSections([section], with: .fade)
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 7.0) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5.0) {
             self.isLoading = true
         }
     }
@@ -62,13 +62,11 @@ class ViewController: UIViewController {
         tableView?.estimatedSectionHeaderHeight = 70
         tableView?.separatorStyle = .none
         
-        tableView?.register(AboutCell.nib, forCellReuseIdentifier: AboutCell.identifier)
-        tableView?.register(NamePictureCell.nib, forCellReuseIdentifier: NamePictureCell.identifier)
-        tableView?.register(FriendCell.nib, forCellReuseIdentifier: FriendCell.identifier)
-        tableView?.register(AttributeCell.nib, forCellReuseIdentifier: AttributeCell.identifier)
-        tableView?.register(EmailCell.nib, forCellReuseIdentifier: EmailCell.identifier)
-        tableView?.register(HeaderView.nib, forHeaderFooterViewReuseIdentifier: HeaderView.identifier)
-        tableView?.register(LoadingStateTableViewCell.nib, forCellReuseIdentifier: LoadingStateTableViewCell.identifier)
+        guard let tableView = tableView else {
+            return
+        }
+        viewModel.registerCells(tabelView: tableView)
+        tableView.register(HeaderView.nib, forHeaderFooterViewReuseIdentifier: HeaderView.identifier)
     }
 }
 
@@ -167,5 +165,4 @@ extension ViewController: TableViewCellDelegate {
         tableView?.beginUpdates()
         tableView?.endUpdates()
     }
-
 }

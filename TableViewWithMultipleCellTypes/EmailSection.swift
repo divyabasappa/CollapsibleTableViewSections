@@ -5,6 +5,7 @@
 //  Created by Divya Basappa on 7/31/20.
 
 import Foundation
+import UIKit
 
 class EmailSection: TableViewSectionProtocol {
 
@@ -33,6 +34,12 @@ class EmailSection: TableViewSectionProtocol {
     init(profile: Profile, delegate: TableViewCellDelegate?) {
         self.profile = profile
         self.delegate = delegate
+    }
+    
+    func registerCellInSection(tableView: UITableView) {
+        items.forEach { (cell) in
+            cell.registerCell(in: tableView)
+        }
     }
 
 }

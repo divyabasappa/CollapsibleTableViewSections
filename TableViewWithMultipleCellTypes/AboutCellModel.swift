@@ -8,6 +8,7 @@ import Foundation
 import UIKit
 
 class AboutCellModel: TableViewCellModelProtocol {
+
     var delegate: TableViewCellDelegate?
 
     var reuseIdentifier: String {
@@ -26,6 +27,10 @@ class AboutCellModel: TableViewCellModelProtocol {
         cell.configureWithModel(self)
         cell.delegate = delegate
         return cell
+    }
+    
+    func registerCell(in tableView: UITableView) {
+        tableView.register(AboutCell.nib, forCellReuseIdentifier: reuseIdentifier)
     }
 
 }

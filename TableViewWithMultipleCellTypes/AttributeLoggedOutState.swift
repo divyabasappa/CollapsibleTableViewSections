@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 
 class AttributeLoggedOutState: TableViewCellLoadingStateProtocol {
+    func registerCell(in tableView: UITableView) {
+        tableView.register(LoadingStateTableViewCell.nib, forCellReuseIdentifier: reuseIdentifier)
+    }
 
     var reuseIdentifier: String {
         return "LoadingStateTableViewCell"

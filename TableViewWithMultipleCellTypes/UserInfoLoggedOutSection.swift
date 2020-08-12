@@ -5,8 +5,15 @@
 //  Created by Divya Basappa on 8/11/20.
 
 import Foundation
+import UIKit
 
 class UserInfoLoggedOutSection: TableViewSectionProtocol {
+    
+    func registerCellInSection(tableView: UITableView) {
+        items.forEach { (cell) in
+            cell.registerCell(in: tableView)
+        }
+    }
 
     var delegate: TableViewCellDelegate?
     

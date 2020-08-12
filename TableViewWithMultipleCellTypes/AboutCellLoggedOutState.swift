@@ -10,6 +10,10 @@ import UIKit
 
 class AboutCellLoggedOutState: TableViewCellLoadingStateProtocol {
 
+    func registerCell(in tableView: UITableView) {
+        tableView.register(LoadingStateTableViewCell.nib, forCellReuseIdentifier: reuseIdentifier)
+    }
+
     var reuseIdentifier: String {
         return "LoadingStateTableViewCell"
     }

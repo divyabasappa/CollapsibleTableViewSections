@@ -55,6 +55,15 @@ class ProfileViewModel: NSObject {
         loggedOutSections.append(AttributeSectionLoggedOutState(delegate: delegate))
         loggedOutSections.append(FriendSectionLoggedOutState(delegate: delegate))
     }
+    
+    func registerCells(tabelView: UITableView) {
+        sections.forEach { (section) in
+            section.registerCellInSection(tableView: tabelView)
+        }
+        loggedOutSections.forEach { (section) in
+            section.registerCellInSection(tableView: tabelView)
+        }
+    }
 
 }
 
