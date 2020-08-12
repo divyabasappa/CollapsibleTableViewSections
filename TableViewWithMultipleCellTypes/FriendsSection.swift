@@ -9,7 +9,7 @@ import Foundation
 
 class FriendsSection: TableViewSectionProtocol {
     
-    var isCollapsed = true
+    var isCollapsed = false
     
     var isCollapsible: Bool {
         return true
@@ -18,14 +18,10 @@ class FriendsSection: TableViewSectionProtocol {
     var sectionTitle: String? {
         return "FriendsSection"
     }
-    
-    var type: ProfileViewModelItemType {
-        return .friend
-    }
-    
+
     var profile: Profile?
     
-    var items: [TableViewCellModelProtocol] {
+    var items: [GenericTableViewCellProtocol] {
         guard let friends = profile?.friends, !friends.isEmpty else {
             return []
         }

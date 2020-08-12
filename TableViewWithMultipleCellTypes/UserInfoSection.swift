@@ -14,26 +14,20 @@ class UserInfoSection: TableViewSectionProtocol {
     var isCollapsible: Bool {
         return true
     }
-
-    var type: ProfileViewModelItemType {
-        return .nameAndPicture
-    }
     
-    var isCollapsed = true
+    var isCollapsed = false
     
     var sectionTitle: String? {
         return "UserInfo: I like travelling along Missisipi! Mississippi is a southern U.S. state with the Mississippi River to its west, the state of Alabama to its east, and the Gulf of Mexico to the south."
     }
 
-    var items: [TableViewCellModelProtocol] {
+    var items: [GenericTableViewCellProtocol] {
         guard let name = profile?.fullName,
-            let pictureUrl = profile?.pictureUrl,
-            let email = profile?.email else {
+            let pictureUrl = profile?.pictureUrl else {
                 return []
         }
         let nameAndPictureItem = ProfileViewModelNamePictureItem(name: name, pictureUrl: pictureUrl)
-//        let dobItem = ProfileViewModelEmailItem(email: email)
-        return [NamePictureModel(item: nameAndPictureItem)]
+        return [NamePictureModel(item: nameAndPictureItem), NamePictureModel(item: nameAndPictureItem), NamePictureModel(item: nameAndPictureItem)]
     }
     
     init(profile: Profile) {

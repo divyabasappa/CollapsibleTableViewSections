@@ -8,7 +8,7 @@ import Foundation
 
 class AttributesSection: TableViewSectionProtocol {
     
-    var isCollapsed = true
+    var isCollapsed = false
     
     var isCollapsible: Bool {
         return true
@@ -17,14 +17,10 @@ class AttributesSection: TableViewSectionProtocol {
     var sectionTitle: String? {
         return "AttributesSection"
     }
-
-    var type: ProfileViewModelItemType {
-        return .attribute
-    }
     
     var profile: Profile?
     
-    var items: [TableViewCellModelProtocol] {
+    var items: [GenericTableViewCellProtocol] {
         guard let attributes = profile?.profileAttributes,
             !attributes.isEmpty else {
                 return []

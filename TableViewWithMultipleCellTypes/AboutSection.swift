@@ -9,7 +9,7 @@ import Foundation
 
 class AboutSection: TableViewSectionProtocol {
     
-    var isCollapsed: Bool = true
+    var isCollapsed: Bool = false
 
     var isCollapsible: Bool {
         return true
@@ -19,13 +19,9 @@ class AboutSection: TableViewSectionProtocol {
         return "AboutSection"
     }
     
-    var type: ProfileViewModelItemType {
-        .about
-    }
-    
     var profile: Profile?
     
-    var items: [TableViewCellModelProtocol] {
+    var items: [GenericTableViewCellProtocol] {
         guard let about = profile?.about else {
             return []
         }

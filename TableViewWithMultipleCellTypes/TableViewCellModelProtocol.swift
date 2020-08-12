@@ -7,8 +7,6 @@
 import Foundation
 import UIKit
 
-protocol TableViewCellModelProtocol {
-    var reuseIdentifier: String { get }
-    
+protocol TableViewCellModelProtocol: GenericTableViewCellProtocol {
     func cellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> UITableViewCell
 }

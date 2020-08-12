@@ -12,9 +12,17 @@ class ViewController: UIViewController {
     
     fileprivate let viewModel = ProfileViewModel()
     let dataSource = DataSource()
-    
+    let loggedOutStateDataSource = LoadingStateDataSource()
+
+    var isLoading = false {
+        didSet {
+            setDataSource()
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        isLoading = false
         setupTableView()
         viewModel.reloadSections = { [weak self] (section: Int) in
             self?.tableView?.beginUpdates()
@@ -22,8 +30,24 @@ class ViewController: UIViewController {
             self?.tableView?.endUpdates()
         }
         dataSource.sections = viewModel.sections
-        tableView?.dataSource = dataSource
+        loggedOutStateDataSource.sections = viewModel.loggedOutSections
+        setDataSource()
         tableView?.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 7.0) {
+            self.isLoading = true
+        }
+    }
+    
+    func setDataSource() {
+        if isLoading {
+            tableView?.dataSource = dataSource
+        } else {
+            tableView?.dataSource = loggedOutStateDataSource
+        }
+        tableView?.reloadData()
     }
     
     func setupTableView() {
@@ -38,6 +62,7 @@ class ViewController: UIViewController {
         tableView?.register(AttributeCell.nib, forCellReuseIdentifier: AttributeCell.identifier)
         tableView?.register(EmailCell.nib, forCellReuseIdentifier: EmailCell.identifier)
         tableView?.register(HeaderView.nib, forHeaderFooterViewReuseIdentifier: HeaderView.identifier)
+        tableView?.register(LoadingStateTableViewCell.nib, forCellReuseIdentifier: LoadingStateTableViewCell.identifier)
     }
 }
 
@@ -61,7 +86,9 @@ extension ViewController: UITableViewDelegate {
 
 extension ViewController: HeaderViewDelegate {
     func toggleSection(header: HeaderView, section: Int) {
-        var item = dataSource.sections[section]
+        
+        let currentDataSource = (isLoading ? dataSource : loggedOutStateDataSource) as? DataSourceProtocol
+        guard var item = currentDataSource?.sections[section] else { return }
         if item.isCollapsible {
 
             // Toggle collapse
@@ -75,9 +102,34 @@ extension ViewController: HeaderViewDelegate {
     }
 }
 
-class DataSource: NSObject, UITableViewDataSource {
-    
-    var sections = [TableViewSectionProtocol]()
+protocol DataSourceProtocol {
+    var sections: [TableViewSectionProtocol] { get set }
+}
+
+class LoadingStateDataSource: NSObject, UITableViewDataSource, DataSourceProtocol {
+    var sections: [TableViewSectionProtocol] = []
+
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sections.count
+    }
+
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        let item = sections[section]
+        if item.isCollapsed {
+            return 0
+        } else {
+            return item.rowCount
+        }
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = sections[indexPath.section].items[indexPath.row]
+        return model.cellForTableView(tableView: tableView, atIndexPath: indexPath) 
+    }
+}
+
+class DataSource: NSObject, UITableViewDataSource, DataSourceProtocol  {
+    var sections: [TableViewSectionProtocol] = []
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
@@ -97,8 +149,8 @@ class DataSource: NSObject, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let model = sections[indexPath.section].items[indexPath.row]
-        return model.cellForTableView(tableView: tableView, atIndexPath: indexPath)
+        let model = sections[indexPath.section].items[indexPath.row] as? TableViewCellModelProtocol
+        return model?.cellForTableView(tableView: tableView, atIndexPath: indexPath) ?? UITableViewCell()
     }
 
 }

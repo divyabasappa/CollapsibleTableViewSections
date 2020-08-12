@@ -8,11 +8,10 @@
 import Foundation
 
 protocol TableViewSectionProtocol {
-    var items: [TableViewCellModelProtocol] { get }
-    var isCollapsed: Bool { get set }
+    var items: [GenericTableViewCellProtocol] { get }
     var sectionTitle: String? { get }
+    var isCollapsed: Bool { get set }
     var isCollapsible: Bool { get }
-    var type: ProfileViewModelItemType { get }
     var rowCount: Int { get }
 }
 

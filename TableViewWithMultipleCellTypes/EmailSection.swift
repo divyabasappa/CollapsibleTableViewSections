@@ -8,23 +8,19 @@ import Foundation
 
 class EmailSection: TableViewSectionProtocol {
     
-    var isCollapsed = true
+    var isCollapsed = false
     
     var isCollapsible: Bool {
         return true
     }
     
     var sectionTitle: String? {
-        "EmailSection Gmail is a free email service developed by Google. Users can access Gmail on the web and using third-party programs that synchronize email content through POP or IMAP protocols."
-    }
-     
-    var type: ProfileViewModelItemType {
-        return .email
+        "EmailSection"
     }
 
     var profile: Profile?
 
-    var items: [TableViewCellModelProtocol] {
+    var items: [GenericTableViewCellProtocol] {
         guard let email = profile?.email else {
             return []
         }

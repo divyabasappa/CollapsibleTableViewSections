@@ -7,14 +7,6 @@
 import Foundation
 import UIKit
 
-enum ProfileViewModelItemType {
-    case nameAndPicture
-    case about
-    case email
-    case friend
-    case attribute
-}
-
 protocol ProfileViewModelItem {}
 
 extension ProfileViewModelItem {
@@ -30,15 +22,17 @@ extension ProfileViewModelItem {
 class ProfileViewModel: NSObject {
 
     var sections = [TableViewSectionProtocol]()
+    var loggedOutSections = [TableViewSectionProtocol]()
     
     var reloadSections: ((_ section: Int) -> Void)?
     
     override init() {
         super.init()
-        loadData()
+        fetchData()
+        configLoggedOut()
     }
     
-    func loadData() {
+    func fetchData() {
         guard let data = dataFromFile("ServerData"), let profile = Profile(data: data) else {
             return
         }
@@ -48,6 +42,15 @@ class ProfileViewModel: NSObject {
         sections.append(AttributesSection(profile: profile))
         sections.append(FriendsSection(profile: profile))
     }
+    
+    func configLoggedOut() {
+        loggedOutSections.append(UserInfoLoggedOutSection())
+        loggedOutSections.append(AboutSectionLoggedOutState())
+        loggedOutSections.append(EmailSectionLoggedOutState())
+        loggedOutSections.append(AttributeSectionLoggedOutState())
+        loggedOutSections.append(FriendSectionLoggedOutState())
+    }
+
 }
 
 class ProfileViewModelNamePictureItem: ProfileViewModelItem {

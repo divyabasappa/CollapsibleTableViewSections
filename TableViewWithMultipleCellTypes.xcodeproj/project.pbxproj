@@ -27,6 +27,17 @@
 		36C0EC911EB00C4A0039B330 /* ServerData.json in Resources */ = {isa = PBXBuildFile; fileRef = 36C0EC901EB00C4A0039B330 /* ServerData.json */; };
 		36C0EC931EB00C710039B330 /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0EC921EB00C710039B330 /* ProfileModel.swift */; };
 		36C0EC951EB00E290039B330 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0EC941EB00E290039B330 /* ProfileViewModel.swift */; };
+		8D73136824E3565E00B2ADCC /* NamePictureLoggedOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73136724E3565E00B2ADCC /* NamePictureLoggedOutState.swift */; };
+		8D73136B24E3569600B2ADCC /* LoadingStateTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73136924E3569600B2ADCC /* LoadingStateTableViewCell.swift */; };
+		8D73136C24E3569600B2ADCC /* LoadingStateTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D73136A24E3569600B2ADCC /* LoadingStateTableViewCell.xib */; };
+		8D73136E24E3575F00B2ADCC /* TableViewCellLoadingStateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73136D24E3575F00B2ADCC /* TableViewCellLoadingStateProtocol.swift */; };
+		8D73137024E35AC700B2ADCC /* UserInfoLoggedOutSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73136F24E35AC700B2ADCC /* UserInfoLoggedOutSection.swift */; };
+		8D73137224E3645F00B2ADCC /* AboutCellLoggedOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73137124E3645F00B2ADCC /* AboutCellLoggedOutState.swift */; };
+		8D73137424E3649A00B2ADCC /* AboutSectionLoggedOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73137324E3649A00B2ADCC /* AboutSectionLoggedOutState.swift */; };
+		8D73137624E365D900B2ADCC /* AttributeLoggedOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73137524E365D900B2ADCC /* AttributeLoggedOutState.swift */; };
+		8D73137824E3665500B2ADCC /* AttributeSectionLoggedOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73137724E3665500B2ADCC /* AttributeSectionLoggedOutState.swift */; };
+		8D73137A24E366AA00B2ADCC /* EmailSectionLoggedOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73137924E366AA00B2ADCC /* EmailSectionLoggedOutState.swift */; };
+		8D73137C24E366F800B2ADCC /* FriendSectionLoggedOutState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D73137B24E366F800B2ADCC /* FriendSectionLoggedOutState.swift */; };
 		8D98A5BC24D49C6500B5E1CF /* TableViewCellModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D98A5BB24D49C6500B5E1CF /* TableViewCellModelProtocol.swift */; };
 		8D98A5BE24D49C7800B5E1CF /* TableViewCellConfigurable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D98A5BD24D49C7800B5E1CF /* TableViewCellConfigurable.swift */; };
 		8D98A5C024D49CF600B5E1CF /* TableViewSectionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D98A5BF24D49CF600B5E1CF /* TableViewSectionProtocol.swift */; };
@@ -65,6 +76,17 @@
 		36C0EC901EB00C4A0039B330 /* ServerData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ServerData.json; sourceTree = "<group>"; };
 		36C0EC921EB00C710039B330 /* ProfileModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		36C0EC941EB00E290039B330 /* ProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		8D73136724E3565E00B2ADCC /* NamePictureLoggedOutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NamePictureLoggedOutState.swift; sourceTree = "<group>"; };
+		8D73136924E3569600B2ADCC /* LoadingStateTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingStateTableViewCell.swift; sourceTree = "<group>"; };
+		8D73136A24E3569600B2ADCC /* LoadingStateTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingStateTableViewCell.xib; sourceTree = "<group>"; };
+		8D73136D24E3575F00B2ADCC /* TableViewCellLoadingStateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellLoadingStateProtocol.swift; sourceTree = "<group>"; };
+		8D73136F24E35AC700B2ADCC /* UserInfoLoggedOutSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoLoggedOutSection.swift; sourceTree = "<group>"; };
+		8D73137124E3645F00B2ADCC /* AboutCellLoggedOutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCellLoggedOutState.swift; sourceTree = "<group>"; };
+		8D73137324E3649A00B2ADCC /* AboutSectionLoggedOutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutSectionLoggedOutState.swift; sourceTree = "<group>"; };
+		8D73137524E365D900B2ADCC /* AttributeLoggedOutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeLoggedOutState.swift; sourceTree = "<group>"; };
+		8D73137724E3665500B2ADCC /* AttributeSectionLoggedOutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttributeSectionLoggedOutState.swift; sourceTree = "<group>"; };
+		8D73137924E366AA00B2ADCC /* EmailSectionLoggedOutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSectionLoggedOutState.swift; sourceTree = "<group>"; };
+		8D73137B24E366F800B2ADCC /* FriendSectionLoggedOutState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendSectionLoggedOutState.swift; sourceTree = "<group>"; };
 		8D98A5BB24D49C6500B5E1CF /* TableViewCellModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellModelProtocol.swift; sourceTree = "<group>"; };
 		8D98A5BD24D49C7800B5E1CF /* TableViewCellConfigurable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellConfigurable.swift; sourceTree = "<group>"; };
 		8D98A5BF24D49CF600B5E1CF /* TableViewSectionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewSectionProtocol.swift; sourceTree = "<group>"; };
@@ -107,6 +129,8 @@
 				367B201B1ED211F3000F2BFA /* EmailCell.xib */,
 				367B201E1ED26CCB000F2BFA /* HeaderView.swift */,
 				367B20201ED26CE6000F2BFA /* HeaderView.xib */,
+				8D73136924E3569600B2ADCC /* LoadingStateTableViewCell.swift */,
+				8D73136A24E3569600B2ADCC /* LoadingStateTableViewCell.xib */,
 			);
 			name = "Table View Cells";
 			sourceTree = "<group>";
@@ -146,12 +170,47 @@
 			path = TableViewWithMultipleCellTypes;
 			sourceTree = "<group>";
 		};
+		8D73136424E3557E00B2ADCC /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				8D98A5CD24D4A42900B5E1CF /* UserInfoSection.swift */,
+				8D98A5CF24D4A67300B5E1CF /* AboutSection.swift */,
+				8D98A5D124D4A72100B5E1CF /* EmailSection.swift */,
+				8D98A5D324D4A7BA00B5E1CF /* AttributesSection.swift */,
+				8D98A5D524D4A8F100B5E1CF /* FriendsSection.swift */,
+			);
+			name = Sections;
+			sourceTree = "<group>";
+		};
+		8D73136524E3559000B2ADCC /* LoggedOut Sections */ = {
+			isa = PBXGroup;
+			children = (
+				8D73136F24E35AC700B2ADCC /* UserInfoLoggedOutSection.swift */,
+				8D73137324E3649A00B2ADCC /* AboutSectionLoggedOutState.swift */,
+				8D73137724E3665500B2ADCC /* AttributeSectionLoggedOutState.swift */,
+				8D73137924E366AA00B2ADCC /* EmailSectionLoggedOutState.swift */,
+				8D73137B24E366F800B2ADCC /* FriendSectionLoggedOutState.swift */,
+			);
+			name = "LoggedOut Sections";
+			sourceTree = "<group>";
+		};
+		8D73136624E3564100B2ADCC /* LoggedOut State Cell Models */ = {
+			isa = PBXGroup;
+			children = (
+				8D73136724E3565E00B2ADCC /* NamePictureLoggedOutState.swift */,
+				8D73137124E3645F00B2ADCC /* AboutCellLoggedOutState.swift */,
+				8D73137524E365D900B2ADCC /* AttributeLoggedOutState.swift */,
+			);
+			name = "LoggedOut State Cell Models";
+			sourceTree = "<group>";
+		};
 		8D98A5BA24D49C4D00B5E1CF /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
 				8D98A5BB24D49C6500B5E1CF /* TableViewCellModelProtocol.swift */,
 				8D98A5BD24D49C7800B5E1CF /* TableViewCellConfigurable.swift */,
 				8D98A5BF24D49CF600B5E1CF /* TableViewSectionProtocol.swift */,
+				8D73136D24E3575F00B2ADCC /* TableViewCellLoadingStateProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -159,6 +218,7 @@
 		8D98A5C124D49D9500B5E1CF /* Cell Models */ = {
 			isa = PBXGroup;
 			children = (
+				8D73136624E3564100B2ADCC /* LoggedOut State Cell Models */,
 				8D98A5C224D49DB800B5E1CF /* NamePictureModel.swift */,
 				8D98A5C424D49F4B00B5E1CF /* AboutCellModel.swift */,
 				8D98A5C624D49FE000B5E1CF /* FriendCellModel.swift */,
@@ -171,11 +231,8 @@
 		8D98A5CC24D4A36E00B5E1CF /* TableView Sections */ = {
 			isa = PBXGroup;
 			children = (
-				8D98A5CD24D4A42900B5E1CF /* UserInfoSection.swift */,
-				8D98A5CF24D4A67300B5E1CF /* AboutSection.swift */,
-				8D98A5D124D4A72100B5E1CF /* EmailSection.swift */,
-				8D98A5D324D4A7BA00B5E1CF /* AttributesSection.swift */,
-				8D98A5D524D4A8F100B5E1CF /* FriendsSection.swift */,
+				8D73136524E3559000B2ADCC /* LoggedOut Sections */,
+				8D73136424E3557E00B2ADCC /* Sections */,
 			);
 			name = "TableView Sections";
 			sourceTree = "<group>";
@@ -251,6 +308,7 @@
 				36C0EC861EB00BFC0039B330 /* Assets.xcassets in Resources */,
 				367B20191ED20BC0000F2BFA /* AttributeCell.xib in Resources */,
 				36C0EC841EB00BFC0039B330 /* Main.storyboard in Resources */,
+				8D73136C24E3569600B2ADCC /* LoadingStateTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,23 +324,33 @@
 				8D98A5D424D4A7BA00B5E1CF /* AttributesSection.swift in Sources */,
 				8D98A5C524D49F4B00B5E1CF /* AboutCellModel.swift in Sources */,
 				367B20181ED20BC0000F2BFA /* AttributeCell.swift in Sources */,
+				8D73137424E3649A00B2ADCC /* AboutSectionLoggedOutState.swift in Sources */,
+				8D73137A24E366AA00B2ADCC /* EmailSectionLoggedOutState.swift in Sources */,
 				8D98A5BC24D49C6500B5E1CF /* TableViewCellModelProtocol.swift in Sources */,
 				8D98A5C024D49CF600B5E1CF /* TableViewSectionProtocol.swift in Sources */,
+				8D73137C24E366F800B2ADCC /* FriendSectionLoggedOutState.swift in Sources */,
 				36C0EC811EB00BFC0039B330 /* ViewController.swift in Sources */,
 				36C0EC951EB00E290039B330 /* ProfileViewModel.swift in Sources */,
 				8D98A5C924D4A0E000B5E1CF /* AttributeCellModel.swift in Sources */,
+				8D73136E24E3575F00B2ADCC /* TableViewCellLoadingStateProtocol.swift in Sources */,
 				8D98A5BE24D49C7800B5E1CF /* TableViewCellConfigurable.swift in Sources */,
 				8D98A5D224D4A72100B5E1CF /* EmailSection.swift in Sources */,
 				8D98A5C724D49FE000B5E1CF /* FriendCellModel.swift in Sources */,
+				8D73137624E365D900B2ADCC /* AttributeLoggedOutState.swift in Sources */,
+				8D73137224E3645F00B2ADCC /* AboutCellLoggedOutState.swift in Sources */,
 				367B201F1ED26CCB000F2BFA /* HeaderView.swift in Sources */,
+				8D73137824E3665500B2ADCC /* AttributeSectionLoggedOutState.swift in Sources */,
 				8D98A5C324D49DB800B5E1CF /* NamePictureModel.swift in Sources */,
 				36C0EC7F1EB00BFC0039B330 /* AppDelegate.swift in Sources */,
 				367B200C1ED204B2000F2BFA /* NamePictureCell.swift in Sources */,
 				8D98A5CE24D4A42900B5E1CF /* UserInfoSection.swift in Sources */,
+				8D73137024E35AC700B2ADCC /* UserInfoLoggedOutSection.swift in Sources */,
+				8D73136824E3565E00B2ADCC /* NamePictureLoggedOutState.swift in Sources */,
 				367B201C1ED211F3000F2BFA /* EmailCell.swift in Sources */,
 				8D98A5D024D4A67300B5E1CF /* AboutSection.swift in Sources */,
 				8D98A5CB24D4A16D00B5E1CF /* EmailCellModel.swift in Sources */,
 				367B20101ED20504000F2BFA /* AboutCell.swift in Sources */,
+				8D73136B24E3569600B2ADCC /* LoadingStateTableViewCell.swift in Sources */,
 				8D98A5D624D4A8F100B5E1CF /* FriendsSection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
