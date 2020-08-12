@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         isLoading = false
         setupTableView()
+        viewModel.delegate = self
+        viewModel.setUpDataSource()
         viewModel.reloadSections = { [weak self] (section: Int) in
             self?.tableView?.beginUpdates()
             self?.tableView?.reloadSections([section], with: .fade)
