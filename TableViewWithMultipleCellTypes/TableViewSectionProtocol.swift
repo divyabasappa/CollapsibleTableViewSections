@@ -13,6 +13,7 @@ protocol TableViewSectionProtocol {
     var isCollapsed: Bool { get set }
     var isCollapsible: Bool { get }
     var rowCount: Int { get }
+    var delegate: TableViewCellDelegate? { get set }
 }
 
 extension TableViewSectionProtocol {

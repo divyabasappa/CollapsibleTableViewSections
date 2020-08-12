@@ -8,6 +8,8 @@ import Foundation
 
 class AttributesSection: TableViewSectionProtocol {
     
+    var delegate: TableViewCellDelegate?
+
     var isCollapsed = false
     
     var isCollapsible: Bool {
@@ -32,7 +34,8 @@ class AttributesSection: TableViewSectionProtocol {
         return items
     }
     
-    init(profile: Profile) {
+    init(profile: Profile, delegate: TableViewCellDelegate?) {
         self.profile = profile
+        self.delegate = delegate
     }
 }

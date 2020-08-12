@@ -23,11 +23,16 @@ class ProfileViewModel: NSObject {
 
     var sections = [TableViewSectionProtocol]()
     var loggedOutSections = [TableViewSectionProtocol]()
+
+    weak var delegate: TableViewCellDelegate?
     
     var reloadSections: ((_ section: Int) -> Void)?
     
     override init() {
         super.init()
+    }
+    
+    func setUpDataSource() {
         fetchData()
         configLoggedOut()
     }
@@ -36,19 +41,19 @@ class ProfileViewModel: NSObject {
         guard let data = dataFromFile("ServerData"), let profile = Profile(data: data) else {
             return
         }
-        sections.append(UserInfoSection(profile: profile))
-        sections.append(AboutSection(profile: profile))
-        sections.append(EmailSection(profile: profile))
-        sections.append(AttributesSection(profile: profile))
-        sections.append(FriendsSection(profile: profile))
+        sections.append(UserInfoSection(profile: profile, delegate: delegate))
+        sections.append(AboutSection(profile: profile, delegate: delegate))
+        sections.append(EmailSection(profile: profile, delegate: delegate))
+        sections.append(AttributesSection(profile: profile, delegate: delegate))
+        sections.append(FriendsSection(profile: profile, delegate: delegate))
     }
     
     func configLoggedOut() {
-        loggedOutSections.append(UserInfoLoggedOutSection())
-        loggedOutSections.append(AboutSectionLoggedOutState())
-        loggedOutSections.append(EmailSectionLoggedOutState())
-        loggedOutSections.append(AttributeSectionLoggedOutState())
-        loggedOutSections.append(FriendSectionLoggedOutState())
+        loggedOutSections.append(UserInfoLoggedOutSection(delegate: delegate))
+        loggedOutSections.append(AboutSectionLoggedOutState(delegate: delegate))
+        loggedOutSections.append(EmailSectionLoggedOutState(delegate: delegate))
+        loggedOutSections.append(AttributeSectionLoggedOutState(delegate: delegate))
+        loggedOutSections.append(FriendSectionLoggedOutState(delegate: delegate))
     }
 
 }

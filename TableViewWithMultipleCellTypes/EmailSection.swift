@@ -7,7 +7,9 @@
 import Foundation
 
 class EmailSection: TableViewSectionProtocol {
-    
+
+    var delegate: TableViewCellDelegate?
+
     var isCollapsed = false
     
     var isCollapsible: Bool {
@@ -28,8 +30,9 @@ class EmailSection: TableViewSectionProtocol {
         return [EmailCellModel(item: dobItem)]
     }
     
-    init(profile: Profile) {
+    init(profile: Profile, delegate: TableViewCellDelegate?) {
         self.profile = profile
+        self.delegate = delegate
     }
 
 }

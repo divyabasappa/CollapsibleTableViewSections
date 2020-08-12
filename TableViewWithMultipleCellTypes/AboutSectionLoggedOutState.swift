@@ -9,7 +9,8 @@
 import Foundation
 
 class AboutSectionLoggedOutState: TableViewSectionProtocol {
-
+    var delegate: TableViewCellDelegate?
+    
     var isCollapsible: Bool {
         return true
     }
@@ -22,6 +23,10 @@ class AboutSectionLoggedOutState: TableViewSectionProtocol {
 
     var items: [GenericTableViewCellProtocol] {
         return [AboutCellLoggedOutState()]
+    }
+    
+    init(delegate: TableViewCellDelegate?) {
+        self.delegate = delegate
     }
 
 }

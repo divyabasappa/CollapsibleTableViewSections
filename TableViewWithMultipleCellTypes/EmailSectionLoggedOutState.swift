@@ -9,6 +9,7 @@
 import Foundation
 
 class EmailSectionLoggedOutState: TableViewSectionProtocol {
+    var delegate: TableViewCellDelegate?
 
     var isCollapsible: Bool {
         return true
@@ -22,6 +23,10 @@ class EmailSectionLoggedOutState: TableViewSectionProtocol {
 
     var items: [GenericTableViewCellProtocol] {
         return [AboutCellLoggedOutState()]
+    }
+    
+    init(delegate: TableViewCellDelegate?) {
+        self.delegate = delegate
     }
 
 }

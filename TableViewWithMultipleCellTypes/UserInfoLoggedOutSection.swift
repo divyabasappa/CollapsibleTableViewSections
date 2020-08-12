@@ -10,6 +10,8 @@ import Foundation
 
 class UserInfoLoggedOutSection: TableViewSectionProtocol {
 
+    var delegate: TableViewCellDelegate?
+    
     var isCollapsible: Bool {
         return true
     }
@@ -22,6 +24,10 @@ class UserInfoLoggedOutSection: TableViewSectionProtocol {
 
     var items: [GenericTableViewCellProtocol] {
         return [NamePictureLoggedOutState()]
+    }
+    
+    init(delegate: TableViewCellDelegate?) {
+        self.delegate = delegate
     }
 
 }

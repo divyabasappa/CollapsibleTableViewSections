@@ -8,5 +8,6 @@ import Foundation
 import UIKit
 
 protocol TableViewCellModelProtocol: GenericTableViewCellProtocol {
+    var delegate: TableViewCellDelegate? { get set }
     func cellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> UITableViewCell
 }

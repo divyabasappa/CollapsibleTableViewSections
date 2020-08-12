@@ -8,7 +8,8 @@
 import Foundation
 
 class UserInfoSection: TableViewSectionProtocol {
-    
+    var delegate: TableViewCellDelegate?
+
     var profile: Profile?
     
     var isCollapsible: Bool {
@@ -30,7 +31,8 @@ class UserInfoSection: TableViewSectionProtocol {
         return [NamePictureModel(item: nameAndPictureItem), NamePictureModel(item: nameAndPictureItem), NamePictureModel(item: nameAndPictureItem)]
     }
     
-    init(profile: Profile) {
+    init(profile: Profile, delegate: TableViewCellDelegate?) {
         self.profile = profile
+        self.delegate = delegate
     }
 }

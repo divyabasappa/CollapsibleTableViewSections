@@ -8,6 +8,8 @@
 import Foundation
 
 class FriendsSection: TableViewSectionProtocol {
+    var delegate: TableViewCellDelegate?
+    
     
     var isCollapsed = false
     
@@ -32,7 +34,8 @@ class FriendsSection: TableViewSectionProtocol {
         return items
     }
     
-    init(profile: Profile) {
+    init(profile: Profile, delegate: TableViewCellDelegate?) {
         self.profile = profile
+        self.delegate = delegate
     }
 }

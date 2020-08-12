@@ -8,6 +8,7 @@ import Foundation
 import UIKit
 
 class EmailCellModel: TableViewCellModelProtocol {
+    var delegate: TableViewCellDelegate?
     
     var reuseIdentifier: String {
         return "EmailCell"

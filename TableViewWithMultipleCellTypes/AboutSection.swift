@@ -8,6 +8,8 @@
 import Foundation
 
 class AboutSection: TableViewSectionProtocol {
+    var delegate: TableViewCellDelegate?
+    
     
     var isCollapsed: Bool = false
 
@@ -26,10 +28,11 @@ class AboutSection: TableViewSectionProtocol {
             return []
         }
         let aboutItem = ProfileViewModelAboutItem(about: about)
-        return [AboutCellModel(item: aboutItem)]
+        return [AboutCellModel(item: aboutItem, delegate: delegate)]
     }
 
-    init(profile: Profile) {
+    init(profile: Profile, delegate: TableViewCellDelegate?) {
         self.profile = profile
+        self.delegate = delegate
     }
 }

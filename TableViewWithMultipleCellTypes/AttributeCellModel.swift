@@ -8,6 +8,7 @@ import Foundation
 import UIKit
 
 class AttributeCellModel: TableViewCellModelProtocol {
+    var delegate: TableViewCellDelegate?
 
     var reuseIdentifier: String {
         return "AttributeCell"

@@ -6,6 +6,10 @@
 
 import UIKit
 
+protocol TableViewCellDelegate: class {
+    func reloadCells()
+}
+
 class ViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView?
@@ -51,7 +55,7 @@ class ViewController: UIViewController {
     }
     
     func setupTableView() {
-        tableView?.estimatedRowHeight = 100
+        tableView?.estimatedRowHeight = 150
         tableView?.rowHeight = UITableView.automaticDimension
         tableView?.estimatedSectionHeaderHeight = 70
         tableView?.separatorStyle = .none
@@ -151,6 +155,15 @@ class DataSource: NSObject, UITableViewDataSource, DataSourceProtocol  {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let model = sections[indexPath.section].items[indexPath.row] as? TableViewCellModelProtocol
         return model?.cellForTableView(tableView: tableView, atIndexPath: indexPath) ?? UITableViewCell()
+    }
+
+}
+
+extension ViewController: TableViewCellDelegate {
+
+    func reloadCells() {
+        tableView?.beginUpdates()
+        tableView?.endUpdates()
     }
 
 }

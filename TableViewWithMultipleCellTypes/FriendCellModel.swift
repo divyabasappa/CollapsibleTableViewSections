@@ -8,7 +8,8 @@ import Foundation
 import UIKit
 
 class FriendCellModel: TableViewCellModelProtocol {
-    
+    var delegate: TableViewCellDelegate?
+
     var reuseIdentifier: String {
         return "FriendCell"
     }

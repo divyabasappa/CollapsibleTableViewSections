@@ -9,14 +9,22 @@ import UIKit
 class AboutCell: UITableViewCell, TableViewCellConfigurable {
 
     @IBOutlet weak var aboutLabel: UILabel?
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var delegate: TableViewCellDelegate?
     
     var item: ProfileViewModelItem? {
         didSet {
             guard  let item = item as? ProfileViewModelAboutItem else {
                 return
             }
-            
-            aboutLabel?.text = item.about
+            activityIndicator.startAnimating()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+                self.aboutLabel?.text = item.about
+                self.delegate?.reloadCells()
+            }
         }
     }
     
