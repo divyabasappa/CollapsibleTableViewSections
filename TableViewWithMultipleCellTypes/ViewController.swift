@@ -32,7 +32,7 @@ class ViewController: UIViewController {
         setupTableView()
         viewModel.reloadSections = { [weak self] (section: Int) in
             self?.tableView?.beginUpdates()
-            self?.tableView?.reloadSections([section], with: .fade)
+            self?.tableView?.reloadSections([section], with: .automatic)
             self?.tableView?.endUpdates()
         }
         dataSource.sections = viewModel.sections

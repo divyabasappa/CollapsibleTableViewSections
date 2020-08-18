@@ -39,6 +39,7 @@
                     <constraint firstItem="4Az-Zb-EXe" firstAttribute="leading" secondItem="ugD-fA-Uof" secondAttribute="trailing" constant="20" id="rDH-Ya-c3t"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="nameLabel" destination="4Az-Zb-EXe" id="mWw-cc-XDD"/>
                 <outlet property="pictureImageView" destination="ugD-fA-Uof" id="Jzi-ny-0rB"/>

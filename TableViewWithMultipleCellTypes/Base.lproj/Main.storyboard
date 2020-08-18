@@ -19,13 +19,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="1Re-QQ-z7k">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="1Re-QQ-z7k">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Re-QQ-z7k" firstAttribute="top" secondItem="dpE-X6-dPp" secondAttribute="top" id="2mF-xq-g8I"/>
+                            <constraint firstAttribute="trailing" secondItem="1Re-QQ-z7k" secondAttribute="trailing" id="DGX-SN-26B"/>
+                            <constraint firstItem="TuE-Vb-HcB" firstAttribute="top" secondItem="1Re-QQ-z7k" secondAttribute="bottom" id="Qxu-5j-uVJ"/>
+                            <constraint firstItem="1Re-QQ-z7k" firstAttribute="leading" secondItem="dpE-X6-dPp" secondAttribute="leading" id="Z17-n7-BJn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="e75-Oq-nYi"/>
                     <connections>
